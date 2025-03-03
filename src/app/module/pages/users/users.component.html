@@ -1,0 +1,33 @@
+<div class="table-responsive">
+  <table class="table table-hover mb-0">
+    <thead>
+      <tr>
+        <th> NO.</th>
+        <th> NAME</th>
+        <th>EMAIL</th>
+        <th class="text-start text-capitalize">phone</th>
+        <th class="text-start text-capitalize">address</th>
+        <th class="text-center text-capitalize">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of data; track item) {
+        <tr>
+          <td>
+            <a href="javascript:" class="text-muted">{{ item.id }}</a>
+          </td>
+          <td class="fs-6">{{ item.name }}</td>
+          <td>
+            <span class="d-block">
+              <i class="badge-circle f-10 m-r-5"></i>
+              {{ item.email }}
+            </span>
+          </td>
+          <td class="text-start">{{ item.phone }}</td>
+          <td class="text-start">{{ item.address }}</td>
+          <td class="text-center"><i class="fa-solid fa-ellipsis-vertical"></i></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

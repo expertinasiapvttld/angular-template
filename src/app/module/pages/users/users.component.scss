@@ -1,0 +1,14 @@
+/* Optional: Custom table styles */
+.table {
+  font-size: 14px;
+}
+
+.table th, .table td {
+  padding: 12px;
+}
+
+@media (max-width: 767px) {
+  .table {
+    font-size: 12px;
+  }
+}

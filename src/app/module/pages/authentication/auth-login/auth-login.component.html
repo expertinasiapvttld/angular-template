@@ -1,0 +1,48 @@
+<div class="auth-main">
+  <div class="auth-wrapper v3">
+    <div class="auth-form">
+      <div class="auth-header">
+        <a href="javascript:"><img src="assets/images/logo-dark.svg" alt="logo" /></a>
+      </div>
+      <div class="card my-5">
+        <div class="card-body">
+          <!-- Login Form -->
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+              <h3 class="mb-0"><b>Login</b></h3>
+
+            </div>
+            <!-- Email Field -->
+            <div class="form-group mb-3">
+              <label class="form-label" for="email">Email Address</label>
+              <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email Address" />
+              <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger">
+                Please enter a valid email address.
+              </div>
+            </div>
+            <!-- Password Field -->
+            <div class="form-group mb-3">
+              <label class="form-label" for="password">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password" />
+              <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+                Password is required.
+              </div>
+            </div>
+            <!-- Remember Me & Forgot Password -->
+            <div class="d-flex mt-1 justify-content-between">
+              <div class="form-check">
+                <input class="form-check-input input-primary" type="checkbox" id="customCheckc1" />
+                <label class="form-check-label text-muted" for="customCheckc1">Keep me signed in</label>
+              </div>
+              <h5 class="text-secondary f-w-400"><a href="javascript:">Forgot Password?</a></h5>
+            </div>
+            <!-- Submit Button -->
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
